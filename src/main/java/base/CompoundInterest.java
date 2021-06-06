@@ -1,3 +1,8 @@
+/*
+ *  UCF COP3330 Summer 2021 Assignment 1 Solution
+ *  Copyright 2021 Ryan Harding
+ */
+
 package base;
 
 import java.util.Scanner;
@@ -16,22 +21,54 @@ public class CompoundInterest {
 
   public double getPrincipal() {
     System.out.print("What is the principal? ");
-    return input.nextDouble();
+    String n = input.next();
+    try {
+      Double.parseDouble(n);
+    }
+    catch (NumberFormatException e) {
+      System.out.println("ERROR: Invalid Amount, Try Again!");
+      return getPrincipal();
+    }
+    return Double.parseDouble(n);
   }
 
   public double getRate() {
     System.out.print("What is the rate of interest? ");
-    return input.nextDouble();
+    String n = input.next();
+    try {
+      Double.parseDouble(n);
+    }
+    catch (NumberFormatException e) {
+      System.out.println("ERROR: Invalid Amount, Try Again!");
+      return getRate();
+    }
+    return Double.parseDouble(n);
   }
 
   public int getTime() {
     System.out.print("How many years? ");
-    return input.nextInt();
+    String n = input.next();
+    try {
+      Integer.parseInt(n);
+    }
+    catch (NumberFormatException e) {
+      System.out.println("ERROR: Invalid Amount, Try Again!");
+      return getTime();
+    }
+    return Integer.parseInt(n);
   }
 
   public int getCompound() {
     System.out.print("How many times per year is interest compounded? ");
-    return input.nextInt();
+    String n = input.next();
+    try {
+      Integer.parseInt(n);
+    }
+    catch (NumberFormatException e) {
+      System.out.println("ERROR: Invalid Amount, Try Again!");
+      return getCompound();
+    }
+    return Integer.parseInt(n);
   }
 
   public String total(double principal, double rate, int time, int n) {
